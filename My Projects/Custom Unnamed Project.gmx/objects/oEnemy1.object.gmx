@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 4
+            <string>
+speed = 4
 direction = random(360)
 
 </string>
@@ -50,7 +51,8 @@ direction = random(360)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Facing
+            <string>
+// Facing
 
 image_angle = direction
 
@@ -84,10 +86,14 @@ if instance_exists(hitBullet)
     {
         instance_create(random(room_width), random(room_height), oEnemy1)
         instance_destroy()
+        
     }
+    
 }
 
 hitPlayer = instance_place(x,y,oPlayer)
+ 
+// Player Gets Hit
 
 if instance_exists(hitPlayer)
 {
