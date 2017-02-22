@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>playerSpeed = 7
+            <string>playerSpeed = 300 / room_speed
 
 // movement
 
@@ -49,6 +49,8 @@ if keyboard_check(ord('D'))  //when D is pressed
     x = x+playerSpeed
 }
 
+
+
 // facing
 
 image_angle = point_direction(x,y, mouse_x, mouse_y)
@@ -57,11 +59,32 @@ image_angle = point_direction(x,y, mouse_x, mouse_y)
 
 if mouse_check_button(mb_left)
 {
+    
     myBullet = instance_create(x, y, oBullet)    
     myBullet.direction = image_angle
-    myBullet.speed = 30
+    myBullet.speed = 900 / room_speed
     myBullet.image_angle = image_angle
+    
+    // bullet kick
+    
+    kick = 90 / room_speed
+    kickDirection = image_angle  + 180
+    x = x + lengthdir_x(kick, kickDirection)
+    y = y + lengthdir_y(kick, kickDirection)
+    audio_play_sound(aNormalBullet1, 1, false)
 }
+
+// stay inside room
+
+if (x &lt; 0) { x = 0}
+if (x &gt; room_width) {x = room_width}
+if (y &lt; 0){y = 0}
+if (y &gt; room_height){y = room_height}
+
+// below code is equivalent to above its here just so I understand it
+
+x = clamp(x, 0, room_width)
+y = clamp(y, 0, room_height)
 </string>
           </argument>
         </arguments>

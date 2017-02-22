@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-speed = 4
+speed = 120 / room_speed
 direction = random(360)
 
 </string>
@@ -70,6 +70,8 @@ if x &lt; 0 or x &gt; room_width
 
 // Damage
 
+nearestPlayer = instance_nearest(x,y,oPlayer)
+
 hitBullet = instance_place(x,y,oBullet)
 
 if instance_exists(hitBullet)
@@ -84,7 +86,8 @@ if instance_exists(hitBullet)
     
     if image_xscale &lt;= 0
     {
-        instance_create(random(room_width), random(room_height), oEnemy1)
+        instance_create(random(view_wview[0]) + view_xview[0],  random(view_hview[0]) + view_yview[0], oEnemy1)
+        // Originally was random(room_width) and random(room_height) but changed it so it spawned in the view.
         instance_destroy()
         
     }
@@ -110,6 +113,9 @@ if instance_exists(hitPlayer)
     image_yscale = image_xscale
 }
 
+
+x = clamp(x, 0, room_width)
+y = clamp(y, 0, room_height)
 </string>
           </argument>
         </arguments>
