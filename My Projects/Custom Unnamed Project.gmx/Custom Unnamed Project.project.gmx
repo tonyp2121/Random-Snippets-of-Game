@@ -12,6 +12,7 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sBullet</sprite>
     <sprite>sprites\sEnemy1</sprite>
+    <sprite>sprites\sGameOver</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>
@@ -22,6 +23,7 @@
     <object>objects\oBullet</object>
     <object>objects\oEnemy1</object>
     <object>objects\oGame</object>
+    <object>objects\oGameOver</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>

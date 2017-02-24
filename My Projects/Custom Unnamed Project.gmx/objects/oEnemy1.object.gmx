@@ -25,8 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-speed = 120 / room_speed
+            <string>EnemySpeed = 120 / room_speed
+
+speed = EnemySpeed
+
+x = random(view_wview[0]) + view_xview[0]
+y = random(view_hview[0]) + view_yview[0] 
 direction = random(360)
 
 </string>
@@ -88,6 +92,7 @@ if instance_exists(hitBullet)
     {
         instance_create(random(view_wview[0]) + view_xview[0],  random(view_hview[0]) + view_yview[0], oEnemy1)
         // Originally was random(room_width) and random(room_height) but changed it so it spawned in the view.
+        instance_create(random(view_wview[0]) + view_xview[0],  random(view_hview[0]) + view_yview[0], oEnemy1)
         instance_destroy()
         
     }
@@ -107,6 +112,7 @@ if instance_exists(hitPlayer)
         if image_xscale &lt;= 0
         {
             instance_destroy()   
+            instance_create(view_wview[0]*.5 + view_xview[0], view_hview[0]*.5 + + view_yview[0], oGameOver)
         }
     }
     image_xscale = image_xscale + .3
