@@ -10,6 +10,8 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sPlayerDestroyBits</sprite>
+    <sprite>sprites\sPlayerDestroyed</sprite>
     <sprite>sprites\sBullet</sprite>
     <sprite>sprites\sEnemy1</sprite>
     <sprite>sprites\sGameOver</sprite>
@@ -20,10 +22,12 @@
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\oPlayer</object>
+    <object>objects\oPlayerDestroyed</object>
     <object>objects\oBullet</object>
     <object>objects\oEnemy1</object>
     <object>objects\oGame</object>
     <object>objects\oGameOver</object>
+    <object>objects\oPlayerDestroyBits</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>

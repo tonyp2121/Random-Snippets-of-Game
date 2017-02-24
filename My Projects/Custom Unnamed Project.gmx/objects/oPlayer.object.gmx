@@ -49,8 +49,6 @@ if keyboard_check(ord('D'))  //when D is pressed
     x = x+playerSpeed
 }
 
-
-
 // facing
 
 image_angle = point_direction(x,y, mouse_x, mouse_y)
@@ -85,6 +83,15 @@ if (y &gt; room_height){y = room_height}
 
 x = clamp(x, 0, room_width)
 y = clamp(y, 0, room_height)
+
+// Death
+
+EnemyCollision = instance_place(x,y,oEnemy1)
+
+if instance_exists(EnemyCollision)
+{
+    
+}
 </string>
           </argument>
         </arguments>

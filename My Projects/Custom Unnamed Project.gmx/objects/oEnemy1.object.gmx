@@ -103,6 +103,7 @@ hitPlayer = instance_place(x,y,oPlayer)
  
 // Player Gets Hit
 
+/*
 if instance_exists(hitPlayer)
 {
     with hitPlayer
@@ -118,7 +119,7 @@ if instance_exists(hitPlayer)
     image_xscale = image_xscale + .3
     image_yscale = image_xscale
 }
-
+*/
 
 x = clamp(x, 0, room_width)
 y = clamp(y, 0, room_height)
