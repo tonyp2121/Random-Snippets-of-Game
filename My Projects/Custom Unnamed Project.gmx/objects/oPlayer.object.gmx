@@ -118,6 +118,11 @@ if instance_exists(EnemyCollision)
     {
         sprite_index = sPlayerDestroyed
         firsthit++
+        BitFiringSpeed = (random(200)+300)/room_speed
+        newBit = instance_create(x,y, oPlayerDestroyBits)
+        newBit.direction = random(360)
+        newBit.image_angle = random(360)
+        newBit.speed = BitFiringSpeed
     }
     if Invincibility == 0
     {
