@@ -33,6 +33,14 @@ x = random(view_wview[0]) + view_xview[0]
 y = random(view_hview[0]) + view_yview[0] 
 direction = random(360)
 
+hitPlayer = instance_place(x,y,oPlayer)
+
+while instance_exists(hitPlayer)
+{
+    x = random(view_wview[0]) + view_xview[0]
+    y = random(view_hview[0]) + view_yview[0] 
+    hitPlayer = instance_place(x,y,oPlayer)
+}
 </string>
           </argument>
         </arguments>

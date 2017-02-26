@@ -8,6 +8,30 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>Invincibility = 100
+firsthit = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -28,6 +52,11 @@
             <string>playerSpeed = 300 / room_speed
 
 // movement
+
+if firsthit != 0 &amp;&amp; Invincibility != 0
+{
+    Invincibility = Invincibility - 1
+}
 
 if keyboard_check(ord('W'))  //when W is pressed
 {
@@ -79,19 +108,41 @@ if (x &gt; room_width) {x = room_width}
 if (y &lt; 0){y = 0}
 if (y &gt; room_height){y = room_height}
 
-// below code is equivalent to above its here just so I understand it
-
-x = clamp(x, 0, room_width)
-y = clamp(y, 0, room_height)
-
 // Death
 
 EnemyCollision = instance_place(x,y,oEnemy1)
 
 if instance_exists(EnemyCollision)
 {
+    if firsthit == 0  //if you've never been hit before we give you an invincibility window and show youre damaged.
+    {
+        sprite_index = sPlayerDestroyed
+        firsthit++
+    }
+    if Invincibility == 0
+    {
+        Bits = 8
     
+    n = 0
+    for (n=0; n&lt; Bits; n++)
+    {
+        BitFiringSpeed = (random(200)+300)/room_speed
+        newBit = instance_create(x,y, oPlayerDestroyBits)
+        newBit.direction = random(360)
+        newBit.image_angle = random(360)
+        newBit.speed = BitFiringSpeed
+    }
+        instance_create(view_wview[0]*.5 + view_xview[0], view_hview[0]*.5 + + view_yview[0], oGameOver)
+        instance_destroy()
+    }
 }
+
+// below code is equivalent to above its here just so I understand it
+
+x = clamp(x, 0, room_width)
+y = clamp(y, 0, room_height)
+
+
 </string>
           </argument>
         </arguments>
