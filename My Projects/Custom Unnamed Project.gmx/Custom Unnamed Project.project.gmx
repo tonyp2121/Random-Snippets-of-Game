@@ -7,6 +7,8 @@
   <sounds name="sound">
     <sound>sound\aNormalBullet1</sound>
     <sound>sound\aBigGun1</sound>
+    <sound>sound\aExplosionFirstHit</sound>
+    <sound>sound\aExplosionDeath</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>

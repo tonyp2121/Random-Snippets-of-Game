@@ -58,6 +58,7 @@ if firsthit != 0 &amp;&amp; Invincibility != 0
     Invincibility = Invincibility - 1
 }
 
+
 if keyboard_check(ord('W'))  //when W is pressed
 {
     y = y-playerSpeed
@@ -123,6 +124,7 @@ if instance_exists(EnemyCollision)
         newBit.direction = random(360)
         newBit.image_angle = random(360)
         newBit.speed = BitFiringSpeed
+        audio_play_sound(aExplosionFirstHit, 1, false)
     }
     if Invincibility == 0
     {
@@ -137,6 +139,7 @@ if instance_exists(EnemyCollision)
         newBit.image_angle = random(360)
         newBit.speed = BitFiringSpeed
     }
+        audio_play_sound(aExplosionDeath, 1, false)
         instance_create(view_wview[0]*.5 + view_xview[0], view_hview[0]*.5 + + view_yview[0], oGameOver)
         instance_destroy()
     }
