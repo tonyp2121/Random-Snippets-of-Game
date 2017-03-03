@@ -29,9 +29,13 @@
 
 speed = EnemySpeed
 
+// spawn somewhere where the player can see
+
 x = random(view_wview[0]) + view_xview[0]
 y = random(view_hview[0]) + view_yview[0] 
 direction = random(360)
+
+// if it hits a player on spawn
 
 hitPlayer = instance_place(x,y,oPlayer)
 

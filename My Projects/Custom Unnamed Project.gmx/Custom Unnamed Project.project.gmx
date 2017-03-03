@@ -17,15 +17,24 @@
     <sprite>sprites\sBullet</sprite>
     <sprite>sprites\sEnemy1</sprite>
     <sprite>sprites\sGameOver</sprite>
+    <sprite>sprites\sEnemey2</sprite>
+    <sprite>sprites\sEnemy2Chunks1</sprite>
+    <sprite>sprites\sEnemy2Chunks2</sprite>
+    <sprite>sprites\sEnemy2Chunks3</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\playerHitEnemy.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\oPlayer</object>
     <object>objects\oBullet</object>
     <object>objects\oEnemy1</object>
+    <object>objects\oEnemy2</object>
+    <object>objects\oEnemy2DestroyedBits</object>
     <object>objects\oGame</object>
     <object>objects\oGameOver</object>
     <object>objects\oPlayerDestroyBits</object>

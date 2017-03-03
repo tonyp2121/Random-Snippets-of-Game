@@ -26,6 +26,11 @@
           <argument>
             <kind>1</kind>
             <string>window_set_fullscreen(true)
+
+
+// this is so when the oEnemy2D bits reach the are theyre supposed to reach they reform
+enemy2BitsNeeded = 9
+enemy2BitsHave = 0
 </string>
           </argument>
         </arguments>

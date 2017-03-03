@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>Invincibility = 100
-firsthit = 0
+firstHit = 0
 </string>
           </argument>
         </arguments>
@@ -53,7 +53,7 @@ firsthit = 0
 
 // movement
 
-if firsthit != 0 &amp;&amp; Invincibility != 0
+if firstHit != 0 &amp;&amp; Invincibility != 0
 {
     Invincibility = Invincibility - 1
 }
@@ -111,39 +111,9 @@ if (y &gt; room_height){y = room_height}
 
 // Death
 
-EnemyCollision = instance_place(x,y,oEnemy1)
-
-if instance_exists(EnemyCollision)
-{
-    if firsthit == 0  //if you've never been hit before we give you an invincibility window and show youre damaged.
-    {
-        sprite_index = sPlayerDestroyed
-        firsthit++
-        BitFiringSpeed = (random(200)+300)/room_speed
-        newBit = instance_create(x,y, oPlayerDestroyBits)
-        newBit.direction = random(360)
-        newBit.image_angle = random(360)
-        newBit.speed = BitFiringSpeed
-        audio_play_sound(aExplosionFirstHit, 1, false)
-    }
-    if Invincibility == 0
-    {
-        Bits = 8
-    
-    n = 0
-    for (n=0; n&lt; Bits; n++)
-    {
-        BitFiringSpeed = (random(200)+300)/room_speed
-        newBit = instance_create(x,y, oPlayerDestroyBits)
-        newBit.direction = random(360)
-        newBit.image_angle = random(360)
-        newBit.speed = BitFiringSpeed
-    }
-        audio_play_sound(aExplosionDeath, 1, false)
-        instance_create(view_wview[0]*.5 + view_xview[0], view_hview[0]*.5 + + view_yview[0], oGameOver)
-        instance_destroy()
-    }
-}
+firstHit = playerHitEnemy(oEnemy1, firstHit, Invincibility)
+firstHit = playerHitEnemy(oEnemy2, firstHit, Invincibility)
+firstHit = playerHitEnemy(oEnemy2DestroyedBits, firstHit, Invincibility)
 
 // below code is equivalent to above its here just so I understand it
 
