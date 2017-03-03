@@ -48,10 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//deacceleration = 4/room_speed
+            <string>deacceleration = 4/room_speed
 
 if speed &gt; 120/room_speed {
-//speed = speed - deacceleration
+speed = speed - deacceleration
 }
 image_angle = image_angle + 3
 </string>
