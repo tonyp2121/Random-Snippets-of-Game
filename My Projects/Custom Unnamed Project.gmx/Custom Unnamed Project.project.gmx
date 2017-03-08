@@ -14,7 +14,8 @@
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sPlayerDestroyed</sprite>
     <sprite>sprites\sPlayerDestroyBits</sprite>
-    <sprite>sprites\sBullet</sprite>
+    <sprite>sprites\sBullet1</sprite>
+    <sprite>sprites\sBullet2</sprite>
     <sprite>sprites\sEnemy1</sprite>
     <sprite>sprites\sGameOver</sprite>
     <sprite>sprites\sEnemey2</sprite>
@@ -28,10 +29,15 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\playerHitEnemy.gml</script>
+    <script>scripts\bounceOffWalls.gml</script>
+    <script>scripts\dissapearOffScreen.gml</script>
+    <script>scripts\floatInSpace.gml</script>
+    <script>scripts\explodeInChunks.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oPlayer</object>
     <object>objects\oBullet</object>
+    <object>objects\oBullet2</object>
     <object>objects\oEnemy1</object>
     <object>objects\oEnemy2</object>
     <object>objects\oEnemy2DestroyedBits</object>

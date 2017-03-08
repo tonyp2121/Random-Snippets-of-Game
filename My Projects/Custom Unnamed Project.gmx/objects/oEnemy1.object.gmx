@@ -74,15 +74,7 @@ image_angle = direction
 
 // Collision
 
-if y &lt; 0 or y &gt; room_height
-{
-    vspeed = -vspeed 
-}
-
-if x &lt; 0 or x &gt; room_width
-{
-    hspeed = -hspeed 
-}
+bounceOffWalls()
 
 // Damage
 

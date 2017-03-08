@@ -49,11 +49,11 @@
           <argument>
             <kind>1</kind>
             <string>deacceleration = 4/room_speed
+minFloatSpeed = 120/room_speed
 
-if speed &gt; 120/room_speed {
-speed = speed - deacceleration
-}
-image_angle = image_angle + imageAngleChange
+floatInSpace(deacceleration, minFloatSpeed, imageAngleChange)
+
+dissapearOffScreen()
 </string>
           </argument>
         </arguments>
