@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>oEnemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -90,29 +90,8 @@ if newSpawn == 0{
 
 nearestPlayer = instance_nearest(x,y,oPlayer)
 
-Life = explodeInChunks(Life, oEnemy2DestroyedBits)
-
-hitPlayer = instance_place(x,y,oPlayer)
- 
-// Player Gets Hit
-
-/*
-if instance_exists(hitPlayer)
-{
-    with hitPlayer
-    {
-        image_xscale =  image_xscale - .2
-        image_yscale = image_xscale
-        if image_xscale &lt;= 0
-        {
-            instance_destroy()   
-            instance_create(view_wview[0]*.5 + view_xview[0], view_hview[0]*.5 + + view_yview[0], oGameOver)
-        }
-    }
-    image_xscale = image_xscale + .3
-    image_yscale = image_xscale
-}
-*/
+Life = explodeInChunks(Life, oEnemy2DestroyedBits, oBullet, 1)
+Life = explodeInChunks(Life, oEnemy2DestroyedBits, oBullet2, 2)
 
 x = clamp(x, 0, room_width)
 y = clamp(y, 0, room_height)

@@ -9,6 +9,10 @@
     <sound>sound\aBigGun1</sound>
     <sound>sound\aExplosionFirstHit</sound>
     <sound>sound\aExplosionDeath</sound>
+    <sound>sound\aEnemy1Death</sound>
+    <sound>sound\aEnemyBossExplosion</sound>
+    <sound>sound\aEnemy2Death</sound>
+    <sound>sound\aEnemy2Reformed</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
@@ -16,6 +20,7 @@
     <sprite>sprites\sPlayerDestroyBits</sprite>
     <sprite>sprites\sBullet1</sprite>
     <sprite>sprites\sBullet2</sprite>
+    <sprite>sprites\sBulletShotgun</sprite>
     <sprite>sprites\sEnemy1</sprite>
     <sprite>sprites\sGameOver</sprite>
     <sprite>sprites\sEnemey2</sprite>
@@ -33,6 +38,9 @@
     <script>scripts\dissapearOffScreen.gml</script>
     <script>scripts\floatInSpace.gml</script>
     <script>scripts\explodeInChunks.gml</script>
+    <script>scripts\bullet2HitEnemy.gml</script>
+    <script>scripts\enemy2HitShrinkBehavior.gml</script>
+    <script>scripts\playerBulletType.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oPlayer</object>
@@ -44,6 +52,7 @@
     <object>objects\oGame</object>
     <object>objects\oGameOver</object>
     <object>objects\oPlayerDestroyBits</object>
+    <object>objects\oEnemy</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
