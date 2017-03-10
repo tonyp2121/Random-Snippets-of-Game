@@ -9,7 +9,7 @@ if instance_exists(hitBullet)
 {
     with hitBullet
     {   
-        if (argument2==oBullet)  // messy af but basically only destroy it if its a certain bullet type
+        if (object_index = oBullet1 || object_index = oFlamethrower)  // messy af but basically only destroy it if its a certain bullet type
         instance_destroy()
     }
     

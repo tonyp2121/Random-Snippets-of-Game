@@ -91,7 +91,7 @@ if newSpawn == 0{
 nearestPlayer = instance_nearest(x,y,oPlayer)
 
 Life = explodeInChunks(Life, oEnemy2DestroyedBits, oBullet, 1)
-Life = explodeInChunks(Life, oEnemy2DestroyedBits, oBullet2, 2)
+//Life = explodeInChunks(Life, oEnemy2DestroyedBits, oBullet2, 2)
 
 x = clamp(x, 0, room_width)
 y = clamp(y, 0, room_height)

@@ -79,7 +79,6 @@ bounceOffWalls()
 // Damage
 
 enemy2HitShrinkBehavior(oBullet)
-enemy2HitShrinkBehavior(oBullet2)
 
 hitPlayer = instance_place(x,y,oPlayer)
  

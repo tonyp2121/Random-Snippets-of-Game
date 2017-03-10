@@ -16,6 +16,7 @@ if instance_exists(EnemyCollision1)
         newBit.image_angle = random(360)
         newBit.speed = BitFiringSpeed
         audio_play_sound(aExplosionFirstHit, 1, false)
+        sprite_index = sPlayerInvincible
     }
     if argument2 == 0
     {

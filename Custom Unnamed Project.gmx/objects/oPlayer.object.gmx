@@ -25,8 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>Invincibility = 100
+            <string>Invincibility = 3 * room_speed
 firstHit = 0
+
+currentWeapon = instance_create(x,y,oMachineGun)
+currentWeapon.owner = self.id
 </string>
           </argument>
         </arguments>
@@ -56,6 +59,7 @@ firstHit = 0
 if firstHit != 0 &amp;&amp; Invincibility != 0
 {
     Invincibility = Invincibility - 1
+    if (Invincibility == 0) {sprite_index = sPlayerDestroyed}
 }
 
 
@@ -83,24 +87,6 @@ if keyboard_check(ord('D'))  //when D is pressed
 
 image_angle = point_direction(x,y, mouse_x, mouse_y)
 
-// shooting
-
-if mouse_check_button(mb_left)
-{
-    
-    myBullet = instance_create(x, y, oBullet)    
-    myBullet.direction = image_angle - 4 + random(8.0) 
-    myBullet.speed = 900 / room_speed
-    myBullet.image_angle = image_angle
-    
-    // bullet kick
-    
-    kick = 90 / room_speed
-    kickDirection = image_angle  + 180
-    x = x + lengthdir_x(kick, kickDirection)
-    y = y + lengthdir_y(kick, kickDirection)
-    audio_play_sound(aNormalBullet1, 1, false)
-}
 
 // stay inside room
 
@@ -111,9 +97,7 @@ if (y &gt; room_height){y = room_height}
 
 // Death
 
-firstHit = playerHitEnemy(oEnemy1, firstHit, Invincibility)
-firstHit = playerHitEnemy(oEnemy2, firstHit, Invincibility)
-firstHit = playerHitEnemy(oEnemy2DestroyedBits, firstHit, Invincibility)
+firstHit = playerHitEnemy(oEnemy, firstHit, Invincibility)
 
 // below code is equivalent to above its here just so I understand it
 

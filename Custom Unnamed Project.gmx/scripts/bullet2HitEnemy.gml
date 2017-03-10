@@ -8,6 +8,8 @@ if (enemyCollision && hitEnemy == 0){
     vspeed = -vspeed 
     hspeed = -hspeed
     hitEnemy = 1
+    numberOfBounces --
+    bounceNumChanged = 1
 }
 
 if (!enemyCollision && hitEnemy == 1)

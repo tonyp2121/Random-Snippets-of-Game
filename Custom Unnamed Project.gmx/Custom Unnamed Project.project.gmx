@@ -17,6 +17,7 @@
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
     <sprite>sprites\sPlayerDestroyed</sprite>
+    <sprite>sprites\sPlayerInvincible</sprite>
     <sprite>sprites\sPlayerDestroyBits</sprite>
     <sprite>sprites\sBullet1</sprite>
     <sprite>sprites\sBullet2</sprite>
@@ -27,6 +28,7 @@
     <sprite>sprites\sEnemy2Chunks1</sprite>
     <sprite>sprites\sEnemy2Chunks2</sprite>
     <sprite>sprites\sEnemy2Chunks3</sprite>
+    <sprite>sprites\sFlamethrower</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>
@@ -44,8 +46,9 @@
   </scripts>
   <objects name="objects">
     <object>objects\oPlayer</object>
-    <object>objects\oBullet</object>
+    <object>objects\oBullet1</object>
     <object>objects\oBullet2</object>
+    <object>objects\oFlamethrower</object>
     <object>objects\oEnemy1</object>
     <object>objects\oEnemy2</object>
     <object>objects\oEnemy2DestroyedBits</object>
@@ -53,6 +56,8 @@
     <object>objects\oGameOver</object>
     <object>objects\oPlayerDestroyBits</object>
     <object>objects\oEnemy</object>
+    <object>objects\oBullet</object>
+    <object>objects\oMachineGun</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
