@@ -19,6 +19,10 @@
     <sprite>sprites\sPlayerDestroyed</sprite>
     <sprite>sprites\sPlayerInvincible</sprite>
     <sprite>sprites\sPlayerDestroyBits</sprite>
+    <sprite>sprites\sMachineGunPickup</sprite>
+    <sprite>sprites\sFlamethrowerPickup</sprite>
+    <sprite>sprites\sMachineGun</sprite>
+    <sprite>sprites\sFlamethrowerWeapon</sprite>
     <sprite>sprites\sBullet1</sprite>
     <sprite>sprites\sBullet2</sprite>
     <sprite>sprites\sBulletShotgun</sprite>
@@ -43,6 +47,7 @@
     <script>scripts\bullet2HitEnemy.gml</script>
     <script>scripts\enemy2HitShrinkBehavior.gml</script>
     <script>scripts\playerBulletType.gml</script>
+    <script>scripts\canBePickedUp.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\oPlayer</object>
@@ -58,6 +63,7 @@
     <object>objects\oEnemy</object>
     <object>objects\oBullet</object>
     <object>objects\oMachineGun</object>
+    <object>objects\oFlamethrowerWeapon</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
