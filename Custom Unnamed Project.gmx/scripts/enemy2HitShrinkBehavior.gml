@@ -6,7 +6,7 @@ if instance_exists(hitBullet)
 {
     with hitBullet
     {
-        if (object_index == oBullet1 || object_index == oFlamethrower){ // might want to add a chance to be put on fire and have sustained damage later
+        if (object_index == oBullet1 || object_index == oFlamethrower || object_index = oShotgunBullet){ // might want to add a chance to be put on fire and have sustained damage later
             instance_destroy()}
     }
     

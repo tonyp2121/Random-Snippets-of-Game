@@ -21,6 +21,7 @@
     <sprite>sprites\sPlayerDestroyBits</sprite>
     <sprite>sprites\sMachineGunPickup</sprite>
     <sprite>sprites\sFlamethrowerPickup</sprite>
+    <sprite>sprites\sShotgunPickup</sprite>
     <sprite>sprites\sMachineGun</sprite>
     <sprite>sprites\sFlamethrowerWeapon</sprite>
     <sprite>sprites\sBullet1</sprite>
@@ -52,6 +53,7 @@
   <objects name="objects">
     <object>objects\oPlayer</object>
     <object>objects\oBullet1</object>
+    <object>objects\oShotgunBullet</object>
     <object>objects\oBullet2</object>
     <object>objects\oFlamethrower</object>
     <object>objects\oEnemy1</object>
@@ -63,6 +65,7 @@
     <object>objects\oEnemy</object>
     <object>objects\oBullet</object>
     <object>objects\oMachineGun</object>
+    <object>objects\oShotgun</object>
     <object>objects\oFlamethrowerWeapon</object>
   </objects>
   <timelines name="timelines">
