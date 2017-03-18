@@ -29,11 +29,15 @@
 firstHit = 0
 //owner = noone
 
+depth = 2
+
 currentWeapon = noone //instance_create(x,y,oMachineGun)
 //currentWeapon.owner = self.id
+weaponIndex = 0
+weaponCount = 0
 
-weapon[0] = oMachineGun
-weapon[1] = oFlamethrowerWeapon
+weaponMax = 3
+weapon[weaponMax] = 0
 </string>
           </argument>
         </arguments>
@@ -91,6 +95,13 @@ if keyboard_check(ord('D'))  //when D is pressed
 
 image_angle = point_direction(x,y, mouse_x, mouse_y)
 
+// switching weapons
+
+if mouse_check_button_pressed(mb_right)
+{
+    weaponIndex++
+    if(weaponIndex &gt;= weaponCount){weaponIndex = 0}
+}
 
 // stay inside room
 

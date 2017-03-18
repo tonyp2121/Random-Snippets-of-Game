@@ -52,16 +52,17 @@ pickup = 0
           <argument>
             <kind>1</kind>
             <string>if instance_exists(owner){
-sprite_index = sFlamethrowerWeapon
+if owner.weapon[owner.weaponIndex] == self.id{
+sprite_index = sFlamethrowerWeapon}
+else {sprite_index = sBlank}
 pickup = 1
 x = owner.x
 y = owner.y
 image_angle = owner.image_angle
 
 // shooting
-
-if mouse_check_button(mb_left)
-{
+if(owner.weapon[owner.weaponIndex] == self.id){
+if mouse_check_button(mb_left) {
    
     myBullet = instance_create(x , y, oFlamethrower)    
     myBullet.direction = image_angle - 4 + random(8.0) 
@@ -75,6 +76,7 @@ if mouse_check_button(mb_left)
     owner.x = owner.x + lengthdir_x(kick, kickDirection)
     owner.y = owner.y + lengthdir_y(kick, kickDirection)
     audio_play_sound(aNormalBullet1, 1, false)
+}
 }
 }
 

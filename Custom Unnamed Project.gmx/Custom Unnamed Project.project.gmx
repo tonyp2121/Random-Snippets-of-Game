@@ -16,6 +16,7 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
+    <sprite>sprites\sShotgun</sprite>
     <sprite>sprites\sPlayerDestroyed</sprite>
     <sprite>sprites\sPlayerInvincible</sprite>
     <sprite>sprites\sPlayerDestroyBits</sprite>
@@ -34,6 +35,7 @@
     <sprite>sprites\sEnemy2Chunks2</sprite>
     <sprite>sprites\sEnemy2Chunks3</sprite>
     <sprite>sprites\sFlamethrower</sprite>
+    <sprite>sprites\sBlank</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>

@@ -59,8 +59,8 @@ y = owner.y
 image_angle = owner.image_angle
 
 // shooting
-
-if mouse_check_button(mb_left)
+if(owner.weapon[owner.weaponIndex] == self.id){
+if mouse_check_button(mb_left) 
 {
     if (chance == 0) { shootValue = 5 chance = 1}
     else {shootValue = -5 chance = 0}
@@ -76,6 +76,7 @@ if mouse_check_button(mb_left)
     owner.x = owner.x + lengthdir_x(kick, kickDirection)
     owner.y = owner.y + lengthdir_y(kick, kickDirection)
     audio_play_sound(aNormalBullet1, 1, false)
+}
 }
 }
 

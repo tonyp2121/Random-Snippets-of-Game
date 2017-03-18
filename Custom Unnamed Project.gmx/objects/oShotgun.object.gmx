@@ -53,17 +53,19 @@ delayBetweenShots = 0
           <argument>
             <kind>1</kind>
             <string>if instance_exists(owner){
-sprite_index = sMachineGun
+if owner.weapon[owner.weaponIndex] == self.id{
+sprite_index = sShotgun}
+else {sprite_index = sBlank}
 pickup = 1
 x = owner.x
 y = owner.y
 image_angle = owner.image_angle
 delayBetweenShots --
 // shooting
-
+if(owner.weapon[owner.weaponIndex] == self.id){
 if (mouse_check_button(mb_left) &amp;&amp; delayBetweenShots &lt;= 0)
 {
-    for(i =0; i&lt; 8; i++){
+    for(i =0; i&lt; 10; i++){
     myBullet = instance_create(x, y, oShotgunBullet) 
     test =   random_range(-12,12)
     myBullet.direction = image_angle + test 
@@ -71,12 +73,13 @@ if (mouse_check_button(mb_left) &amp;&amp; delayBetweenShots &lt;= 0)
     myBullet.image_angle = image_angle + test
     }
     // bullet kick
-    delayBetweenShots = .5 * room_speed
+    delayBetweenShots = .3 * room_speed
     kick = 150 / room_speed
     kickDirection = image_angle  + 180
     owner.x = owner.x + lengthdir_x(kick, kickDirection)
     owner.y = owner.y + lengthdir_y(kick, kickDirection)
     audio_play_sound(aNormalBullet1, 1, false)
+}
 }
 }
 
