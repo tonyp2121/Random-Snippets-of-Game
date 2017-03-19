@@ -36,6 +36,7 @@
     <sprite>sprites\sEnemy2Chunks3</sprite>
     <sprite>sprites\sFlamethrower</sprite>
     <sprite>sprites\sBlank</sprite>
+    <sprite>sprites\sBigGunBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>
@@ -56,6 +57,7 @@
     <object>objects\oPlayer</object>
     <object>objects\oBullet1</object>
     <object>objects\oShotgunBullet</object>
+    <object>objects\oBigBullet</object>
     <object>objects\oBullet2</object>
     <object>objects\oFlamethrower</object>
     <object>objects\oEnemy1</object>
@@ -68,6 +70,7 @@
     <object>objects\oBullet</object>
     <object>objects\oMachineGun</object>
     <object>objects\oShotgun</object>
+    <object>objects\oBigGun1</object>
     <object>objects\oFlamethrowerWeapon</object>
   </objects>
   <timelines name="timelines">
