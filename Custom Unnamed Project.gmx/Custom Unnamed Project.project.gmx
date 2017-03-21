@@ -16,27 +16,29 @@
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\sPlayer</sprite>
-    <sprite>sprites\sShotgun</sprite>
     <sprite>sprites\sPlayerDestroyed</sprite>
     <sprite>sprites\sPlayerInvincible</sprite>
     <sprite>sprites\sPlayerDestroyBits</sprite>
     <sprite>sprites\sMachineGunPickup</sprite>
     <sprite>sprites\sFlamethrowerPickup</sprite>
     <sprite>sprites\sShotgunPickup</sprite>
+    <sprite>sprites\sBigGunPickup</sprite>
     <sprite>sprites\sMachineGun</sprite>
     <sprite>sprites\sFlamethrowerWeapon</sprite>
+    <sprite>sprites\sBigGunWeapon</sprite>
+    <sprite>sprites\sShotgun</sprite>
     <sprite>sprites\sBullet1</sprite>
     <sprite>sprites\sBullet2</sprite>
     <sprite>sprites\sBulletShotgun</sprite>
+    <sprite>sprites\sFlamethrower</sprite>
+    <sprite>sprites\sBigGunBullet</sprite>
     <sprite>sprites\sEnemy1</sprite>
     <sprite>sprites\sGameOver</sprite>
     <sprite>sprites\sEnemey2</sprite>
     <sprite>sprites\sEnemy2Chunks1</sprite>
     <sprite>sprites\sEnemy2Chunks2</sprite>
     <sprite>sprites\sEnemy2Chunks3</sprite>
-    <sprite>sprites\sFlamethrower</sprite>
     <sprite>sprites\sBlank</sprite>
-    <sprite>sprites\sBigGunBullet</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>

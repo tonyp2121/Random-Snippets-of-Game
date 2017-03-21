@@ -58,7 +58,7 @@ if (boolValue == 0){
 
 hitEnemy = instance_place(x,y,oEnemy)
 
-if (hitEnemy){
+if (hitEnemy &amp;&amp; hitEnemy.object_index != oEnemy2DestroyedBits){
     hitEnemy.x = hitEnemy.x + lengthdir_x(speed, direction)
     hitEnemy.y = hitEnemy.y + lengthdir_y(speed, direction)
     speed = speed - 100/(room_speed^2);
