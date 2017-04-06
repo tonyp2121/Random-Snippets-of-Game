@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>chance = 0
-shootValue = 5
+            <string>shootValue = 5 // I damage
 owner = noone
-pickup = 0
+pickup = 0      // so I know when its been picked up (if it was dropped as well 
+                // which may be supported later on I needed to know if it was 
+                // already grabbed)
 delayBetweenShots = 0
+                //has to be initially 0 so the player can shoot immediately
 </string>
           </argument>
         </arguments>

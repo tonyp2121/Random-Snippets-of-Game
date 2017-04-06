@@ -23,6 +23,7 @@
     <sprite>sprites\sFlamethrowerPickup</sprite>
     <sprite>sprites\sShotgunPickup</sprite>
     <sprite>sprites\sBigGunPickup</sprite>
+    <sprite>sprites\sMineGunPickup</sprite>
     <sprite>sprites\sMachineGun</sprite>
     <sprite>sprites\sFlamethrowerWeapon</sprite>
     <sprite>sprites\sBigGunWeapon</sprite>
@@ -39,6 +40,8 @@
     <sprite>sprites\sEnemy2Chunks2</sprite>
     <sprite>sprites\sEnemy2Chunks3</sprite>
     <sprite>sprites\sBlank</sprite>
+    <sprite>sprites\sMine</sprite>
+    <sprite>sprites\sExplosion</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bRoom</background>
