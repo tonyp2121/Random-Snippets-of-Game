@@ -73,7 +73,10 @@
     <object>objects\oMachineGun</object>
     <object>objects\oShotgun</object>
     <object>objects\oBigGun1</object>
+    <object>objects\oMineGun</object>
     <object>objects\oFlamethrowerWeapon</object>
+    <object>objects\oMine</object>
+    <object>objects\oExplosion</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
