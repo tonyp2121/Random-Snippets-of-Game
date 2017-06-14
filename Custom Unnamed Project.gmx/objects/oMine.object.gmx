@@ -54,6 +54,7 @@ timeUntilExplosion = random_range(.1,.2)
             <string>speed = speed - 10/room_speed
 if (speed &lt; 0) {speed = 0}
 image_angle = image_angle + spin;
+bounceOffSolidObjects()
 if (explode){
     timeUntilExplosion -= 1/room_speed
     if (timeUntilExplosion &lt; 0)
