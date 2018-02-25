@@ -8,6 +8,7 @@ public class playerMoveScript : MonoBehaviour {
 	private bool facingRight = false;
 	public int playerJumpPower = 1250;
 	private float moveX;
+    public bool isGrounded = false;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class playerMoveScript : MonoBehaviour {
 	void playerMove(){
 		 // controls
 		 moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
             jump();
         }
@@ -41,7 +42,8 @@ public class playerMoveScript : MonoBehaviour {
 	void jump(){
         // jump code
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerJumpPower);
-	}
+        isGrounded = false;
+    }
 
 	void flipPlayer(){
         facingRight = !facingRight;
@@ -49,4 +51,13 @@ public class playerMoveScript : MonoBehaviour {
         localScale.x *= -1;
         transform.localScale = localScale;
 	}
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("player has collided with " + col.collider.name);
+        if (col.collider.tag == "ground")
+        {
+            isGrounded = true;
+        }
+    }
 }
