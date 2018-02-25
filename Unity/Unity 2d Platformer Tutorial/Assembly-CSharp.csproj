@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CameraSystem.cs" />
+     <Compile Include="Assets\enemyMoves.cs" />
      <Compile Include="Assets\playerHealth.cs" />
      <Compile Include="Assets\playerMoveScript.cs" />
  <Reference Include="UnityEngine.UI">
