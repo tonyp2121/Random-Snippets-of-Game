@@ -92,7 +92,7 @@ public class Hacker : MonoBehaviour {
 
     void menuHint()
     {
-        Terminal.WriteLine("");
+        Terminal.WriteLine(""); 
         Terminal.WriteLine("Type menu to return");
     }
 }
