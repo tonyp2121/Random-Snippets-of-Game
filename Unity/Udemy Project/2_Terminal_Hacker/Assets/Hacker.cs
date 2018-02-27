@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Hacker : MonoBehaviour {
 
+    private int rand;
     private int level = 0;
+    private string [,] password = { { "books", "aisle", "self", "password", "font", "borrow" }, 
+                                    { "prisoner", "handcuffs", "holster", "uniform", "arrest", "sheriff"}};
 
     enum Screen { mainMenu, password, win };
-    Screen currentScreen;
+    private Screen currentScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -39,13 +42,28 @@ public class Hacker : MonoBehaviour {
         {
             RunMainMenu(input);
         }
+        else if (currentScreen == Screen.password)
+        {
+            RunPasswordState(input);
+        }
+    }
+
+
+    void StartGame()
+    {
+        Terminal.ClearScreen();
+        Terminal.WriteLine("Enter your password");
+        Terminal.WriteLine("Hint: " + password[level - 1, rand].Anagram());
+        currentScreen = Screen.password;
     }
 
     private void RunMainMenu(string input)
     {
         if (input == "1" || input == "2")
         {
+            rand = Random.Range(0,6);
             level = int.Parse(input);
+            print(password[level - 1, rand]);
             StartGame();
         }
         else
@@ -54,10 +72,19 @@ public class Hacker : MonoBehaviour {
         }
     }
 
-    void StartGame()
+    private void RunPasswordState(string input)
     {
-        Terminal.ClearScreen();
-        Terminal.WriteLine("You've chosen level " + level);
-        currentScreen = Screen.password;
+        if (input == password [level-1, rand])
+        {
+            currentScreen = Screen.win;
+            Terminal.WriteLine("");
+            Terminal.WriteLine("Correct Password");
+            Terminal.WriteLine("YOU WIN!");
+        }
+        else
+        {
+            StartGame();
+        }
     }
+
 }
