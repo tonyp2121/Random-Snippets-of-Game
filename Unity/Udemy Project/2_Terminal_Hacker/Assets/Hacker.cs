@@ -5,9 +5,10 @@ using UnityEngine;
 public class Hacker : MonoBehaviour {
 
     private int rand;
-    private int level = 0;
-    private string [,] password = { { "books", "aisle", "self", "password", "font", "borrow" }, 
-                                    { "prisoner", "handcuffs", "holster", "uniform", "arrest", "sheriff"}};
+    private int level;
+    private string [,] password = { { "books", "aisle", "shelf", "password", "font", "borrow" }, 
+                                    { "prisoner", "handcuffs", "holster", "uniform", "arrest", "sheriff"},
+                                    { "starfield", "spaceman", "jupiter", "astronaut", "starship", "asteroid",} };
 
     enum Screen { mainMenu, password, win };
     private Screen currentScreen;
@@ -24,7 +25,7 @@ public class Hacker : MonoBehaviour {
         Terminal.WriteLine("Pick a difficulty level haxxor");
         Terminal.WriteLine("1 - Library");
         Terminal.WriteLine("2 - Police Station");
-        //Terminal.WriteLine("3 - Nasa");
+        Terminal.WriteLine("3 - Nasa");
     }
 
     // Update is called once per frame
@@ -51,19 +52,20 @@ public class Hacker : MonoBehaviour {
 
     void StartGame()
     {
+        rand = Random.Range(0, 6);
+        print(password[level - 1, rand]);
         Terminal.ClearScreen();
         Terminal.WriteLine("Enter your password");
         Terminal.WriteLine("Hint: " + password[level - 1, rand].Anagram());
+        menuHint();
         currentScreen = Screen.password;
     }
 
     private void RunMainMenu(string input)
     {
-        if (input == "1" || input == "2")
+        if (input == "1" || input == "2" || input == "3")
         {
-            rand = Random.Range(0,6);
             level = int.Parse(input);
-            print(password[level - 1, rand]);
             StartGame();
         }
         else
@@ -80,6 +82,7 @@ public class Hacker : MonoBehaviour {
             Terminal.WriteLine("");
             Terminal.WriteLine("Correct Password");
             Terminal.WriteLine("YOU WIN!");
+            menuHint();
         }
         else
         {
@@ -87,4 +90,9 @@ public class Hacker : MonoBehaviour {
         }
     }
 
+    void menuHint()
+    {
+        Terminal.WriteLine("");
+        Terminal.WriteLine("Type menu to return");
+    }
 }
