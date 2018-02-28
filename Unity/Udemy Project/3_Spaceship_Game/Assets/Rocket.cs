@@ -15,7 +15,6 @@ public class Rocket : MonoBehaviour {
 	void Start () {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        rigidBody.mass = .060f;
 	}
 	
 	// Update is called once per frame
@@ -24,12 +23,26 @@ public class Rocket : MonoBehaviour {
         Rotate();
 	}
 
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                break;
+            case "Fuel":
+                break;
+            default:
+                Debug.Log("Non friendly object touched");
+                break;
+        }
+    }
+
     private void Thrust()
     {
         float thrustThisFrame = mainThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(Vector3.up);
+            rigidBody.AddRelativeForce(Vector3.up * mainThrust);
             if (!audioSource.isPlaying)
             {
                 audioSource.Play();
