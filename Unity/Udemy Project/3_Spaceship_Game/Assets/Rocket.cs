@@ -18,16 +18,25 @@ public class Rocket : MonoBehaviour {
     [SerializeField] AudioClip deathSound;
     [SerializeField] AudioClip levelComplete;
 
+    [SerializeField] ParticleSystem mainEngineParticles;
+    [SerializeField] ParticleSystem deathParticles;
+    [SerializeField] ParticleSystem levelCompleteParticles;
+
     // Use this for initialization
     void Start () {
+        
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        
 	}
 
 	// Update is called once per frame
 	void Update () {
-         RespondToThrustInput();
-         RespondToRotateInput();
+        if (state == State.Alive)
+        {
+            RespondToThrustInput();
+            RespondToRotateInput();
+        }
 	}
 
     void OnCollisionEnter(Collision collision)
@@ -52,6 +61,8 @@ public class Rocket : MonoBehaviour {
         state = State.Dying;
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
+        mainEngineParticles.Stop();
+        deathParticles.Play();
         Invoke("LoadFirstScene", 2f);
         rigidBody.constraints = RigidbodyConstraints.None;
     }
@@ -61,6 +72,8 @@ public class Rocket : MonoBehaviour {
         state = State.Transcending;
         audioSource.Stop();
         audioSource.PlayOneShot(levelComplete);
+        mainEngineParticles.Stop();
+        levelCompleteParticles.Play();
         Invoke("LoadNextScene", 1.5f);
     }
 
@@ -78,13 +91,14 @@ public class Rocket : MonoBehaviour {
     {
 
         float thrustThisFrame = mainThrust * Time.deltaTime;
-        if (Input.GetKey(KeyCode.Space) && state != State.Dying)
+        if (Input.GetKey(KeyCode.Space))
         {
             ApplyThrust();
         }
-        else if (state == State.Alive)
+        else 
         {
            audioSource.Stop();
+            mainEngineParticles.Stop();
         }
     }
 
@@ -95,6 +109,7 @@ public class Rocket : MonoBehaviour {
         {
             audioSource.PlayOneShot(mainEngine);
         }
+        mainEngineParticles.Play();
     }
 
     private void RespondToRotateInput()
