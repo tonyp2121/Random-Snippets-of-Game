@@ -198,8 +198,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1638449618777198}
   m_LocalRotation: {x: 0.75105983, y: -0, z: -0, w: 0.6602343}
-  m_LocalPosition: {x: 0, y: -1.4, z: -0.27}
-  m_LocalScale: {x: 0.66847026, y: 0.66847026, z: 0.84210783}
+  m_LocalPosition: {x: 0, y: -1.023, z: -0.27}
+  m_LocalScale: {x: 0.8262844, y: 0.80814487, z: 0.7163486}
   m_Children: []
   m_Father: {fileID: 4630535678867606}
   m_RootOrder: 6
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rcsThrust: 200
-  mainThrust: 30
+  mainThrust: 1300
   mainEngine: {fileID: 8300000, guid: c7417916a029ee84dbdf006862ca5e9d, type: 3}
   deathSound: {fileID: 8300000, guid: fbed6e8de21622e4d9a80552a0285a42, type: 3}
   levelComplete: {fileID: 8300000, guid: 996b449e1f878594588fa727a9245cad, type: 3}
