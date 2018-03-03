@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour {
 
     Rigidbody rigidBody;
     AudioSource audioSource;
+    bool collisionDetection = true;
 
     [SerializeField] float levelLoadDelay = 2f;
 
@@ -33,13 +34,27 @@ public class Rocket : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         if (state == State.Alive)
         {
             RespondToThrustInput();
             RespondToRotateInput();
         }
-	}
+        DebugKeys();
+    }
+
+    private void DebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextScene();
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDetection ^= collisionDetection;
+        }
+    }
 
     void OnCollisionEnter(Collision collision)
     {
