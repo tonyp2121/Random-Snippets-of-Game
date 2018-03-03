@@ -116,11 +116,16 @@ public class Rocket : MonoBehaviour {
         {
             ApplyThrust();
         }
-        else 
+        else
         {
-           audioSource.Stop();
-            mainEngineParticles.Stop();
+            DontApplyThrust();
         }
+    }
+
+    private void DontApplyThrust()
+    {
+        audioSource.Stop();
+        mainEngineParticles.Stop();
     }
 
     private void ApplyThrust()
@@ -135,7 +140,8 @@ public class Rocket : MonoBehaviour {
 
     private void RespondToRotateInput()
     {
-        rigidBody.freezeRotation = true; // before we rotate it we freeze the rotation 
+        rigidBody.angularVelocity = Vector3.zero;  // remove physics rotation
+
         float rotationThisFrame = rcsThrust * Time.deltaTime;
 
         if (Input.GetKey(KeyCode.A) && state != State.Dying)
@@ -146,8 +152,6 @@ public class Rocket : MonoBehaviour {
         {
             transform.Rotate(-Vector3.forward * rotationThisFrame);
         }
-
-        rigidBody.freezeRotation = false; // before we rotate it we freeze the rotation 
     }
 
 }
