@@ -8,7 +8,7 @@ public class Rocket : MonoBehaviour {
 
     Rigidbody rigidBody;
     AudioSource audioSource;
-    bool collisionDetection = true;
+    [SerializeField] bool collisionDetection = true;
 
     [SerializeField] float levelLoadDelay = 2f;
 
@@ -48,11 +48,11 @@ public class Rocket : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            LoadNextScene();
+            SceneManager.LoadScene(1);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
-            collisionDetection ^= collisionDetection;
+            collisionDetection ^= true;
         }
     }
 
@@ -68,7 +68,8 @@ public class Rocket : MonoBehaviour {
                 StartFinishSequence();
                 break;
             default:
-                StartDyingSequence();
+                if (collisionDetection)
+                    StartDyingSequence();
                 break;
         }
     }
