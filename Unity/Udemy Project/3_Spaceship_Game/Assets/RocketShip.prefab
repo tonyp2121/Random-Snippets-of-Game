@@ -256,7 +256,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1718755815791246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.68, y: 24.52, z: 0}
+  m_LocalPosition: {x: -24.59, y: 2.221751, z: 0}
   m_LocalScale: {x: 1.4182842, y: 1.4182845, z: 1.4182845}
   m_Children:
   - {fileID: 4026790308313208}
@@ -633,7 +633,7 @@ Light:
   m_SpotAngle: 57.8
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -702,8 +702,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelLoadDelay: 2
-  rcsThrust: 200
-  mainThrust: 1300
+  rcsThrust: 250
+  mainThrust: 1400
   mainEngine: {fileID: 8300000, guid: c7417916a029ee84dbdf006862ca5e9d, type: 3}
   deathSound: {fileID: 8300000, guid: fbed6e8de21622e4d9a80552a0285a42, type: 3}
   levelComplete: {fileID: 8300000, guid: 996b449e1f878594588fa727a9245cad, type: 3}
@@ -782,7 +782,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 999971465
+  randomSeed: -923187788
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4095,7 +4095,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4143,7 +4143,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1836984143
+  randomSeed: 573524700
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -7504,7 +7504,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1006678649
+  randomSeed: 408028095
   InitialModule:
     serializedVersion: 3
     enabled: 1
