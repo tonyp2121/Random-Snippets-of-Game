@@ -15,6 +15,8 @@ public class Rocket : MonoBehaviour {
     enum State { Alive, Dying, Transcending};
     State state = State.Alive;
 
+    int currentSceneIndex;
+
     [SerializeField] float rcsThrust = 250f;
     [SerializeField] float mainThrust = 290f;
     [SerializeField] AudioClip mainEngine;
@@ -27,11 +29,10 @@ public class Rocket : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        
-	}
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
 
 	// Update is called once per frame
 	void Update ()
@@ -41,14 +42,18 @@ public class Rocket : MonoBehaviour {
             RespondToThrustInput();
             RespondToRotateInput();
         }
-        DebugKeys();
+        if (Debug.isDebugBuild)
+        {
+            DebugKeys();
+        }
     }
 
     private void DebugKeys()
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            SceneManager.LoadScene(1);
+            if (currentSceneIndex + 1 == SceneManager.sceneCountInBuildSettings) {SceneManager.LoadScene(0);}
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -58,7 +63,7 @@ public class Rocket : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-        if(state != State.Alive) { return; }
+        if(state != State.Alive || !collisionDetection) { return; }
 
         switch (collision.gameObject.tag)
         {
@@ -68,8 +73,7 @@ public class Rocket : MonoBehaviour {
                 StartFinishSequence();
                 break;
             default:
-                if (collisionDetection)
-                    StartDyingSequence();
+                StartDyingSequence();
                 break;
         }
     }
@@ -81,7 +85,7 @@ public class Rocket : MonoBehaviour {
         audioSource.PlayOneShot(deathSound);
         mainEngineParticles.Stop();
         deathParticles.Play();
-        Invoke("LoadFirstScene", levelLoadDelay);
+        Invoke("ReloadCurrentScene", levelLoadDelay);
         rigidBody.constraints = RigidbodyConstraints.None;
     }
 
@@ -95,14 +99,15 @@ public class Rocket : MonoBehaviour {
         Invoke("LoadNextScene", levelLoadDelay);
     }
 
-    private void LoadFirstScene()
+    private void ReloadCurrentScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        if (currentSceneIndex + 1 == SceneManager.sceneCountInBuildSettings) { SceneManager.LoadScene(0); }
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 
     private void RespondToThrustInput()

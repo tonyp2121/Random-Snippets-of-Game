@@ -388,7 +388,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4397158363279786, guid: bb65ec5eec4a30a4c9a03ff0e76e2d74, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 27.759998
+      value: 44.44
       objectReference: {fileID: 0}
     - target: {fileID: 4397158363279786, guid: bb65ec5eec4a30a4c9a03ff0e76e2d74, type: 2}
       propertyPath: m_LocalPosition.z
@@ -709,7 +709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333f6ca6bbd536b40bc64e4ec126944f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 12, z: 0}
+  movementVector: {x: 0, y: -16, z: 0}
   period: 4
 --- !u!1001 &1606169198
 Prefab:
@@ -887,7 +887,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4397158363279786, guid: bb65ec5eec4a30a4c9a03ff0e76e2d74, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 50.65
+      value: 67.33
       objectReference: {fileID: 0}
     - target: {fileID: 4397158363279786, guid: bb65ec5eec4a30a4c9a03ff0e76e2d74, type: 2}
       propertyPath: m_LocalPosition.z
@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 333f6ca6bbd536b40bc64e4ec126944f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 16, z: 0}
+  movementVector: {x: 0, y: -11, z: 0}
   period: 4
 --- !u!1001 &2025119982
 Prefab:
