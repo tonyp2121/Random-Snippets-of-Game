@@ -52,8 +52,7 @@ public class Rocket : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            if (currentSceneIndex + 1 == SceneManager.sceneCountInBuildSettings) {SceneManager.LoadScene(0);}
-            SceneManager.LoadScene(currentSceneIndex + 1);
+            LoadNextScene();
         }
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -106,8 +105,7 @@ public class Rocket : MonoBehaviour {
 
     private void LoadNextScene()
     {
-        if (currentSceneIndex + 1 == SceneManager.sceneCountInBuildSettings) { SceneManager.LoadScene(0); }
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene((currentSceneIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 
     private void RespondToThrustInput()
