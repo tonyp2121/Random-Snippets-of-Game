@@ -17,14 +17,12 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         float horizontalThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-        float verticalThrow = CrossPlatformInputManager.GetAxis("Vertical");
         float xOffset = horizontalSpeed * horizontalThrow * Time.deltaTime;
-        float rawNewXPos = transform.localPosition.x + xOffset;
-        float newXPos = Mathf.Clamp(rawNewXPos, -4.5f, 4.5f);
+        float newXPos = Mathf.Clamp(transform.localPosition.x + xOffset, -4.5f, 4.5f);
 
+        float verticalThrow = CrossPlatformInputManager.GetAxis("Vertical");
         float yOffset = verticalSpeed * verticalThrow * Time.deltaTime;
-        float rawNewYPos = transform.localPosition.y + yOffset;
-        float newYPos = Mathf.Clamp(rawNewYPos, -3f, 3f);
+        float newYPos = Mathf.Clamp(transform.localPosition.y + yOffset, -3f, 3f);
 
         transform.localPosition = new Vector3(newXPos, newYPos, transform.localPosition.z);
 	}
