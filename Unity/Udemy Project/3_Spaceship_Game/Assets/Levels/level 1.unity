@@ -913,6 +913,7 @@ GameObject:
   m_Component:
   - component: {fileID: 680984701}
   - component: {fileID: 680984700}
+  - component: {fileID: 680984702}
   m_Layer: 0
   m_Name: Wind-Ambiance
   m_TagString: Untagged
@@ -1013,6 +1014,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680984702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680984699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 926e3e6e3e38164429dfa8651562fde7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &691555921
 Prefab:
   m_ObjectHideFlags: 0
