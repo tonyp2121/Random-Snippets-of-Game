@@ -172,6 +172,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 10
   verticalSpeed: 10
+  xRange: 4.5
+  yRange: 3
+  positionPitchFactor: -7
+  controlPitchFactor: -30
 --- !u!114 &114139857031163926
 MonoBehaviour:
   m_ObjectHideFlags: 1
