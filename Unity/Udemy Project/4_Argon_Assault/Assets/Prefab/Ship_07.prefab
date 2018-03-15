@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33320748614889338}
   - component: {fileID: 23737017157804400}
   - component: {fileID: 54011506294943374}
-  - component: {fileID: 65736128901211518}
+  - component: {fileID: 114550391931875158}
   m_Layer: 0
   m_Name: Ship_07
   m_TagString: Untagged
@@ -99,15 +99,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65736128901211518
-BoxCollider:
+--- !u!114 &114550391931875158
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1330105141890764}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.38938537, y: 0.65080804, z: 0.100909695}
-  m_Center: {x: 0, y: 0, z: -0.0000000055879354}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268e2ccf845a7ed4d9828ea9fd53638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathFX: {fileID: 1375416528227186, guid: fac0d6ecd04f44f4e9573c926901ef17, type: 2}
